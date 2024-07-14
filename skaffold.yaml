@@ -1,0 +1,20 @@
+apiVersion: skaffold/v4beta10
+kind: Config
+metadata:
+  name: blog-skaffold-go
+build:
+  artifacts:
+    - image: blog-skaffold-go/app
+      context: .
+      docker:
+        dockerfile: ./Dockerfile
+      sync:
+        infer:
+        - '**/*'
+        hooks:
+          after:
+            - container:
+                command: ["sh", "-c", "pgrep devinit | xargs kill -USR1"]
+deploy:
+  kubectl: {}
+

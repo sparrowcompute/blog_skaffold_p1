@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: app
+  name: app
+  namespace: default
+spec:
+  containers:
+  - image: blog-skaffold-go/app:latest
+    imagePullPolicy: IfNotPresent
+    name: app
