@@ -1,0 +1,8 @@
+go.work
+go.work.sum
+README.md
+LICENSE
+Skaffold.yaml
+Dockerfile
+.dockerignore
+.git
