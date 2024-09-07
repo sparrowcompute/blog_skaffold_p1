@@ -2,7 +2,6 @@ ARG GO_VERSION=1.22
 FROM golang:${GO_VERSION}
 ARG GO_VERSION
 
-RUN echo ok
 # init process that enables us to tell go to rebuild/rerun when files have been synced
 RUN curl https://raw.githubusercontent.com/sparrowengine/devinit/main/devinit -o /usr/local/bin/devinit && \
   chmod 755 /usr/local/bin/devinit
